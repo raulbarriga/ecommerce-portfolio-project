@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import store from './store';
 import 'hamburgers/dist/hamburgers.min.css';
+import "font-awesome/css/font-awesome.css";
 
 
 ReactDOM.render(

@@ -1,6 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPaw
+} from "@fortawesome/free-solid-svg-icons";
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
@@ -14,6 +18,8 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import OrdersScreen from './screens/OrdersScreen';
+import { urlencoded } from 'body-parser';
+//import {pawLogo} from '../public/images/paw-logo'
 
 //const useComponentDidMount = func => useEffect(func, []);
 
@@ -23,18 +29,18 @@ function App() {
 
   useEffect(() => {
     // Look for .hamburger
-  var hamburger = document.querySelector(".hamburger");
-  var closeHamburger = document.querySelector(".sidebar-close-button");
-  // On click
-  hamburger.addEventListener("click", function() {
-    // Toggle class "is-active" and open sidemenu
-    hamburger.classList.toggle("is-active");
-    
-  });
-  closeHamburger.addEventListener("click", function(){
-    // close sidemenu
-    hamburger.classList.toggle('is-active');
-  })
+    var hamburger = document.querySelector(".hamburger");
+    var closeHamburger = document.querySelector(".sidebar-close-button");
+    // On click
+    hamburger.addEventListener("click", function () {
+      // Toggle class "is-active" and open sidemenu
+      hamburger.classList.toggle("is-active");
+
+    });
+    closeHamburger.addEventListener("click", function () {
+      // close sidemenu
+      hamburger.classList.toggle('is-active');
+    })
     return () => {
       //
     };
@@ -52,19 +58,28 @@ function App() {
         <header className="header">
           <div className="brand">
             <button className="hamburger hamburger--squeeze" onClick={openMenu}>
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
             </button>
-            <Link to="/">Logo</Link>
+            <Link to="/">
+              P<FontAwesomeIcon
+                className="fas"
+                icon={faPaw}
+              />
+              <FontAwesomeIcon
+                className="fas"
+                icon={faPaw}
+              />ch R Us
+            </Link>
           </div>
           <div className="header-links">
             <a href="cart.html">Cart</a>
             {userInfo ? (
               <Link to="/profile">{userInfo.name}</Link>
             ) : (
-              <Link to="/signin">Sign In</Link>
-            )}
+                <Link to="/signin">Sign In</Link>
+              )}
             {userInfo && userInfo.isAdmin && (
               <div className="dropdown">
                 <a href="#">Admin</a>

@@ -169,6 +169,10 @@ a > .rating > span:last-child {
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before{
   background-color: white !important;
 }
+.pooch-logo {.height: auto;
+width: auto;
+max-height: 15px;
+max-width: 250px;}
 .sidebar {
   position: fixed;
   transition: all 0.5s;
@@ -249,10 +253,12 @@ a > .rating > span:last-child {
   border: 0.1rem #404040 solid;
 }
 .button.primary {
-  background-color: #f0c040;
+  background: linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 19%, rgba(99,99,99,1) 25%, rgba(102,102,102,1) 27%, rgba(71,71,71,0.97) 39%, rgba(0,0,0,0.95) 54%, rgba(17,17,17,0.92) 66%, rgba(43,43,43,0.9) 78%, rgba(28,28,28,0.88) 91%, rgba(23,23,23,0.87) 96%, rgba(19,19,19,0.87) 100%);
+    color: white;
 }
 .button.secondary {
-  background-color: #f0f0f0;
+  background: linear-gradient(45deg, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 19%, rgba(99,99,99,1) 25%, rgba(102,102,102,1) 27%, rgba(71,71,71,0.97) 39%, rgba(0,0,0,0.95) 54%, rgba(17,17,17,0.92) 66%, rgba(43,43,43,0.9) 78%, rgba(28,28,28,0.88) 91%, rgba(23,23,23,0.87) 96%, rgba(19,19,19,0.87) 100%);
+    color: white;
 }
 .text-center {
   text-align: center;
@@ -321,7 +327,7 @@ a > .rating > span:last-child {
   flex-direction: column;
   width: 32rem;
   padding: 2rem;
-  border: 0.1rem #c0c0c0 solid;
+  border: 0.1rem #282c34 solid;
   border-radius: 0.5rem;
   list-style-type: none;
 }
