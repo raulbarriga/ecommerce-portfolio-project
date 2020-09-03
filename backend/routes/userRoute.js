@@ -1,5 +1,7 @@
 import express from 'express';
 import User from '../models/userModel';
+const passport = require('passport');
+const util = require('../util');
 import { getToken, isAuth } from '../util';
 
 const router = express.Router();
@@ -41,6 +43,16 @@ router.post('/signin', async (req, res) => {
     res.status(401).send({ message: 'Invalid Email or Password.' });
   }
 });
+
+// router.get('/facebook/token', passport.authenticate('facebook-token'), (req, res) => {
+//   if (req.user) {
+//       //this is either correct or else have to use authenticate instead & maybe import something
+//       const token = util.getTokenForFacebook({_id: req.user._id});
+//       res.statusCode = 200;
+//       res.setHeader('Content-Type', 'application/json');
+//       res.json({success: true, token: token, status: 'You are successfully logged in!'});
+//   }
+// });
 
 router.post('/register', async (req, res) => {
   const user = new User({

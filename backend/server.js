@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+const passport = require('passport');
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import config from './config';
@@ -19,6 +20,7 @@ mongoose
 
 const app = express();
 app.use(bodyParser.json());
+app.use(passport.initialize());
 app.use('/api/uploads', uploadRoute);
 app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
